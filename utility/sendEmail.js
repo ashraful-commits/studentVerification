@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv').config();
-
+// heroku link
+// <a href="https://studentsverification.herokuapp.com/${data.token}">Verify Now</a>
 //===========================================================> create transporter
 //===========================================================> create transporter
 
@@ -91,8 +92,7 @@ const sendEmail = async (to, subject, text, data) => {
                     <h5>Dear Md ashraful Alam</h5>
                     <p>You recently requested to reset your site.please click verify button for verify</p>
                     <a href="http://localhost:4040/${data.token}">Verify Now</a>
-                    // heroku link 
-                    // <a href="https://studentsverification.herokuapp.com/${data.token}">Verify Now</a>
+                  
                 </div>
                 <div class="temp-footer">
                     <p>Your Account</p>
