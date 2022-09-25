@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <link rel="stylesheet" href="/css/style.css">
+   <!-- <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"> -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.css"/>
+ 
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css">
+   <title>student data</title>
+</head>
+<body>
+    
+    <%- body  %> 
+    <!-- script  -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" ></script> -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $('.soro-data-table').DataTable();
+
+        const studentImag =document.querySelector('#upload-student-photo');
+        const studentPreload =document.querySelector('.preload-student');
+        if(studentImag){
+            studentImag.onchange=(e)=>{
+          const imgLink = URL.createObjectURL(e.target.files[0]);
+          studentPreload.setAttribute('src',imgLink)
+        }
+        }
+
+        const delete_btn = document.querySelectorAll('.delete-btn')
+      delete_btn.forEach((items)=>{
+        items.onclick = ()=>{
+            confir = confirm('are you sure?')
+            if(confir == true){
+                return true;
+            }else{
+                return false;
+            }
+        }
+      })
+    </script>
+</body>
+</html>

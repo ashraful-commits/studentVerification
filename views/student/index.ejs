@@ -1,0 +1,44 @@
+<div class="container student-table">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow">
+                <div class="card-header text-center bg-warning">
+                    <a class="btn btn-primary w-50 d-inline-block" href="/create">Add new Student</a>
+                    <a class="btn btn-danger w-25 d-inline-block" href="/unverified">Unverified Data</a>
+                </div>
+                <div class="card-body">
+                    <h2 class="text-center">All verified student </h2>
+                    <div class="shadow p-3">
+                       
+                        <ul class="list-group">
+                            
+                                <% students.reverse().forEach((element,index)=> { %>
+                                  
+                                    <li class="list-group-item d-flex align-items-center border border-success my-3 shadow">
+                                        <h1><%= index+1 %> </h1>
+                                        <div class="li-item mx-5">
+                                   <% if (element.photo == '1.jpg') { %>
+                                    <img class="crad-img" src="/images/<%= element.photo %> " alt="">
+                                    <% } else { %>
+                                        <img class="crad-img" src="/images/<%= element.photo %> " alt="">
+                                   <% } %>
+                                        <hr>
+                                        <h4>Name    : <%= element.name %> </h4>
+                                        <h6>Email   : <%= element.email %> </h6>
+                                        <h6>Cell    :<%= element.cell %> </h6>
+                                        <h6>Location:<%= element.location %> </h6>
+                                    </div>
+                                        <a href="/delete/<%= element.id %> " class="btn btn-sm btn-danger delete-btn"><i class="fas fa-trash"></i></a>
+                                   
+                                    </li>
+                                    <% }) %>
+                           
+                        </ul>
+                       
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
